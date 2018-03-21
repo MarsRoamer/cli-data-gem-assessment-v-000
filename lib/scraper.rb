@@ -4,30 +4,29 @@ require 'nokogiri'
 
 class Scraper
 
-  def get_body_parts(parts_url)
-    html = open(parts_url)
-    doc = Nokogiri::HTML(html)
-    list = doc.css('.exercise-list li')
-    body_parts = []
-    links = doc.css('.exercise-list li a')
-    list.each do |element|
-      hash = {}
-      part = element.text
-      hash[:body_part] = part
-      hash[:url] = 'https://www.bodybuilding.com' + element.css('a')[0]['href']
-      body_parts << hash
-    end
+  html = open('https://www.bodybuilding.com/exercises')
+  doc = Nokogiri::HTML(html)
+  list = doc.css('.exercise-list li')
+  body_parts = []
+  links = doc.css('.exercise-list li a')
 
-    i = 1
-    body_parts.each do |element|
-      puts element[:body_part]
-      i += 1
+  list.each do |element|
+    hash = {}
+    part = element.text
+    hash[:body_part] = part
+    hash[:url] = 'https://www.bodybuilding.com' + element.css('a')[0]['href']
+    body_parts << hash
+end
 
-    end
-
-
-
+  i = 1
+  body_parts.each do |element|
+    puts element[:body_part]
+    i += 1
 
   end
+
+
+
+
+
 end
-get_body_parts('https://www.bodybuilding.com/exercises')
