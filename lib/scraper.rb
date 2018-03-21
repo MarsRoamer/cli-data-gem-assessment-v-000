@@ -20,7 +20,7 @@ end
 
   body_parts.each do |element|
     puts element[:body_part]
-    binding.pry
+
   end
 
 
