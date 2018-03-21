@@ -20,7 +20,7 @@ end
 
   i = 1
   body_parts.each do |element|
-    puts '#{i}. #{element[:body_part]'
+    puts '#{i}.' + element[:body_part]
     i += 1
 
   end
