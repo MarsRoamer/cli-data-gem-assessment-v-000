@@ -18,12 +18,12 @@ class Scraper
       body_parts << hash
     end
 
-    # i = 1
-    # body_parts.each do |element|
-    #   puts element[:body_part]
-    #   i += 1
-    # 
-    # end
+    i = 1
+    body_parts.each do |element|
+      puts element[:body_part]
+      i += 1
+
+    end
 
 
 
