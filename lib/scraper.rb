@@ -5,7 +5,7 @@ require 'nokogiri'
 class Scraper
 
   def get_body_parts(parts_url)
-    html = open('https://www.bodybuilding.com/exercises')
+    html = open(parts_url)
     doc = Nokogiri::HTML(html)
     list = doc.css('.exercise-list li')
     body_parts = []
@@ -30,4 +30,4 @@ class Scraper
 
   end
 end
-get_body_parts
+get_body_parts('https://www.bodybuilding.com/exercises')
