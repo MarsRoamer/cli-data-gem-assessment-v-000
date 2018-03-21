@@ -30,3 +30,4 @@ class Scraper
 
   end
 end
+get_body_parts
