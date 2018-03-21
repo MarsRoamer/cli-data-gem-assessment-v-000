@@ -19,7 +19,7 @@ class Scraper
 end
 
   body_parts.each do |element|
-    element.each_value{|value| puts value}
+    puts element[:body_part]
     binding.pry
   end
 
